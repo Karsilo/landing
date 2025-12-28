@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/layout";
 import { CourseCard } from "@/components/course-card";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, Atom, Telescope } from "lucide-react";
+import { Calculator, Atom, Telescope, BookOpen, Code, Target, CheckCircle } from "lucide-react";
 
 export default function Courses() {
   return (
@@ -63,64 +63,109 @@ export default function Courses() {
         </div>
       </section>
 
-      {/* Sample Content Section */}
+      {/* What You'll Learn Section */}
       <section className="border-t bg-muted/40">
         <div className="container py-16 md:py-24">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">What You&apos;ll Learn</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Each course includes comprehensive lessons, worked examples, and practice problems
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What You&apos;ll Learn</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Every course is designed to give you a complete learning experience
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 max-w-6xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle>Comprehensive Theory</CardTitle>
-                <CardDescription>
-                  Detailed explanations of concepts with mathematical rigor
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+            <Card className="border-2 hover:border-primary/50 transition-colors">
+              <CardHeader className="pb-4">
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <BookOpen className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Comprehensive Theory</CardTitle>
+                <CardDescription className="text-base">
+                  Build a solid foundation with detailed explanations
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Clear definitions and theorems</li>
-                  <li>• Step-by-step derivations</li>
-                  <li>• Visual aids and diagrams</li>
-                  <li>• Real-world applications</li>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Clear definitions and theorems</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Step-by-step derivations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Visual aids and interactive diagrams</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Real-world applications</span>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Worked Examples</CardTitle>
-                <CardDescription>
-                  Follow along with detailed problem solutions
+            <Card className="border-2 hover:border-primary/50 transition-colors">
+              <CardHeader className="pb-4">
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Code className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Worked Examples</CardTitle>
+                <CardDescription className="text-base">
+                  Master techniques through guided problem solving
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Multiple difficulty levels</li>
-                  <li>• Complete solution walkthroughs</li>
-                  <li>• Common pitfalls highlighted</li>
-                  <li>• Alternative approaches shown</li>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Multiple difficulty levels</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Complete solution walkthroughs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Common pitfalls highlighted</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Multiple solution approaches</span>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Practice Problems</CardTitle>
-                <CardDescription>
-                  Test your understanding with curated problem sets
+            <Card className="border-2 hover:border-primary/50 transition-colors">
+              <CardHeader className="pb-4">
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Target className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Practice Problems</CardTitle>
+                <CardDescription className="text-base">
+                  Test and reinforce your understanding
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Progressive difficulty</li>
-                  <li>• Detailed answer keys</li>
-                  <li>• Exam-style questions</li>
-                  <li>• Downloadable PDFs</li>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Progressive difficulty levels</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Detailed answer keys</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Exam-style practice questions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Downloadable PDF worksheets</span>
+                  </li>
                 </ul>
               </CardContent>
             </Card>

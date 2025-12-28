@@ -35,11 +35,11 @@ const courses = [
 const tools = [
     {
         title: "Bibliography Creator",
-        href: "/tools/bibliography",
+        href: "/tools/bibliography-creator",
     },
     {
         title: "File Compressor",
-        href: "/tools/compressor",
+        href: "/tools/file-compressor",
     },
 ];
 
@@ -49,12 +49,8 @@ const resources = [
         href: "/questions",
     },
     {
-        title: "Practice Problems",
-        href: "/questions",
-    },
-    {
-        title: "Study Materials",
-        href: "/questions",
+        title: "Equation Sheets",
+        href: "/equation-sheets",
     },
 ];
 
@@ -83,9 +79,9 @@ export function Navbar() {
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <div className="flex w-[600px]">
+                                    <div className="flex w-150">
                                         {/* Left Section - Dark Background */}
-                                        <div className="w-[280px] bg-gray-900 dark:bg-gray-800 text-white p-6 rounded-l-lg">
+                                        <div className="w-70 bg-gray-900 dark:bg-gray-800 text-white p-6 rounded-l-lg">
                                             <h3 className="text-lg font-semibold mb-2">Courses</h3>
                                             <p className="text-sm text-gray-300 dark:text-gray-400 mb-6">
                                                 Interactive learning materials for university students
@@ -118,9 +114,9 @@ export function Navbar() {
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <div className="flex w-[600px]">
+                                    <div className="flex w-150">
                                         {/* Left Section - Dark Background */}
-                                        <div className="w-[280px] bg-gray-900 dark:bg-gray-800 text-white p-6 rounded-l-lg">
+                                        <div className="w-70 bg-gray-900 dark:bg-gray-800 text-white p-6 rounded-l-lg">
                                             <h3 className="text-lg font-semibold mb-2">Resources</h3>
                                             <p className="text-sm text-gray-300 dark:text-gray-400 mb-6">
                                                 Practice questions and study materials for exam preparation
@@ -150,12 +146,13 @@ export function Navbar() {
                                     </div>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
+
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <div className="flex w-[600px]">
+                                    <div className="flex w-150">
                                         {/* Left Section - Dark Background */}
-                                        <div className="w-[280px] bg-gray-900 dark:bg-gray-800 text-white p-6 rounded-l-lg">
+                                        <div className="w-70 bg-gray-900 dark:bg-gray-800 text-white p-6 rounded-l-lg">
                                             <h3 className="text-lg font-semibold mb-2">Tools</h3>
                                             <p className="text-sm text-gray-300 dark:text-gray-400 mb-6">
                                                 Free utilities to help with your studies and assignments
@@ -185,6 +182,14 @@ export function Navbar() {
                                     </div>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <Link
+                                    href="/tutoring"
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                >
+                                    Tutoring
+                                </Link>
+                            </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
                 </div>
@@ -193,10 +198,10 @@ export function Navbar() {
                 <div className="flex items-center space-x-2">
                     <ThemeToggle />
                     <div className="h-6 w-px bg-border mx-2" />
-                    <Button variant="ghost" asChild className="hidden md:inline-flex">
+                    <Button variant="ghost" asChild className="hidden md:inline-flex [background:hsl(var(--background)/0.6)!important] hover:[background:hsl(var(--accent)/0.6)!important]">
                         <a href="https://app.karsilo.com/login">Login</a>
                     </Button>
-                    <Button asChild>
+                    <Button asChild className="[background:hsl(var(--primary)/0.95)!important] hover:[background:hsl(var(--primary)/0.9)!important]">
                         <a href="https://app.karsilo.com/sign-up">Get Started</a>
                     </Button>
 
@@ -245,6 +250,20 @@ export function Navbar() {
                                                     {item.title}
                                                 </Link>
                                             ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                                            Tutoring
+                                        </h4>
+                                        <div className="space-y-2">
+                                            <Link
+                                                href="/tutoring"
+                                                className="block py-2 text-base hover:text-primary transition-colors"
+                                                onClick={() => setIsOpen(false)}
+                                            >
+                                                Find a Tutor
+                                            </Link>
                                         </div>
                                     </div>
                                     <div>

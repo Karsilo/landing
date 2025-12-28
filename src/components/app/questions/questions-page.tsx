@@ -95,22 +95,16 @@ export function QuestionsPage() {
 
     return (
         <>
-            {/* Page Header */}
-            <section className="border-b bg-muted/40">
-                <div className="container py-16 md:py-24">
-                    <div className="mx-auto max-w-3xl text-center space-y-4">
-                        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-                            Practice Questions
-                        </h1>
-                        <p className="text-xl text-muted-foreground">
-                            Test your knowledge with curated problem sets and detailed solutions
-                        </p>
-                    </div>
-                </div>
-            </section>
-
             {/* Questions Content */}
-            <section className="container py-16 md:py-24">
+            <section className="container py-8 md:py-16">
+                <div className="mb-10">
+                    <h1 className="text-xl font-bold tracking-tight">
+                        Practice Questions
+                    </h1>
+                    <p className="text-muted-foreground">
+                        Test your knowledge with curated problem sets and detailed solutions
+                    </p>
+                </div>
                 <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                     <div className="flex justify-start mb-12">
                         <TabsList className="grid w-full max-w-md grid-cols-3">
