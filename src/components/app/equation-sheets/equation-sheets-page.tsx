@@ -84,7 +84,7 @@ export function EquationSheetsPage() {
                                         <div className="border rounded-lg overflow-hidden bg-muted/20">
                                             <iframe
                                                 src={subject.pdfPath}
-                                                className="w-full h-[600px]"
+                                                className="w-full h-150"
                                                 title={`${subject.name} Equation Sheet`}
                                             />
                                         </div>
