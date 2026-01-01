@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Layout } from "@/components/layout/layout";
 import { ToolCard } from "@/components/tool-card";
 import {
@@ -8,6 +9,15 @@ import {
     TrendingUp,
     StickyNote,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Tools",
+    description: "Free utilities to make studying and research easier. Bibliography creator, file compressor, and more tools for students.",
+    openGraph: {
+        title: "Tools | Karsilo",
+        description: "Free utilities to make studying and research easier. Bibliography creator, file compressor, and more tools for students.",
+    },
+};
 
 export default function Tools() {
     return (

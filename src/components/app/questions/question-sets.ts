@@ -31,6 +31,12 @@ export const questionSets = {
             questionCount: 20,
         },
         {
+            module: "Fourier Series",
+            questionsUrl: "/pdfs/mathematics/fourier-series-questions.pdf",
+            answersUrl: "/pdfs/mathematics/fourier-series-answers.pdf",
+            questionCount: 15,
+        },
+        {
             module: "Proof by Induction",
             questionsUrl: "/pdfs/mathematics/proof-by-induction-questions.pdf",
             answersUrl: "/pdfs/mathematics/proof-by-induction-answers.pdf",

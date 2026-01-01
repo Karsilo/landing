@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { Layout } from "@/components/layout/layout";
 import { CourseCard } from "@/components/course-card";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator, Atom, Telescope, BookOpen, Code, Target, CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Courses",
+  description: "Comprehensive university-level courses in mathematics, physics, and astronomy with detailed lessons, worked examples, and practice problems.",
+  openGraph: {
+    title: "Courses | Karsilo",
+    description: "Comprehensive university-level courses in mathematics, physics, and astronomy with detailed lessons, worked examples, and practice problems.",
+  },
+};
 
 export default function Courses() {
   return (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Fira_Code } from "next/font/google";
 import { Providers } from "./providers";
+import Script from "next/script";
 
 // Styles
 import "@/styles/globals.css";
@@ -89,6 +90,14 @@ export default function RootLayout({
                 className={`${plusJakarta.variable} ${firaCode.variable} font-sans antialiased`}
                 suppressHydrationWarning
             >
+                <Script id="apollo-tracker" strategy="afterInteractive">
+                    {`
+                        function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+                        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+                        o.onload=function(){window.trackingFunctions.onLoad({appId:"6956d131bc2b940021598491"})},
+                        document.head.appendChild(o)}initApollo();
+                    `}
+                </Script>
                 <Providers>
                     {children}
                 </Providers>
