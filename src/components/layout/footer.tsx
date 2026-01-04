@@ -10,11 +10,11 @@ export function Footer() {
                     <div className="space-y-4">
                         <Link href="/" className="flex items-center space-x-2">
                             <Image
-                                src="/logos/favicon-orange.svg"
+                                src="/logos/icon.svg"
                                 alt="Karsilo"
                                 width={32}
                                 height={32}
-                                className="h-8 w-8"
+                                className="h-9 w-9"
                             />
                             <span className="font-bold text-xl text-white dark:text-gray-900">Karsilo</span>
                         </Link>
