@@ -51,11 +51,15 @@ export function QuestionModuleCard({
                                 href={questionsUrl}
                                 label="Questions"
                                 variant="default"
+                                course={course}
+                                module={module}
                             />
                             <PDFButton
                                 href={answersUrl}
                                 label="Answers"
                                 variant="outline"
+                                course={course}
+                                module={module}
                             />
                         </div>
                     )}

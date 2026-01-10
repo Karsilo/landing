@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { QuestionsHeader } from "./questions-header";
 import { QuestionsContent } from "./questions-content";
@@ -10,13 +10,12 @@ export function QuestionsPage() {
     const searchParams = useSearchParams();
     const courseParam = searchParams.get("course");
 
-    const [activeTab, setActiveTab] = useState("mathematics");
+    // Initialize state with course param if valid, otherwise default to mathematics
+    const initialTab = courseParam && (courseParam === "mathematics" || courseParam === "physics" || courseParam === "astronomy")
+        ? courseParam
+        : "mathematics";
 
-    useEffect(() => {
-        if (courseParam && (courseParam === "mathematics" || courseParam === "physics" || courseParam === "astronomy")) {
-            setActiveTab(courseParam);
-        }
-    }, [courseParam]);
+    const [activeTab, setActiveTab] = useState(initialTab);
 
     return (
         <>
