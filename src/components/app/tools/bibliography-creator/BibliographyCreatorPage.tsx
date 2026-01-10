@@ -7,6 +7,7 @@ import CitationList from "./CitationList";
 import { Button } from "@/components/ui/button";
 import { Plus, Copy, Check } from "lucide-react";
 import { formatCitation } from "@/utils/citation-formatters";
+import { events } from "@/lib/analytics";
 
 const STORAGE_KEY = "bibliography-citations";
 
@@ -103,7 +104,10 @@ export function BibliographyCreatorPage() {
                                     Copy All
                                 </Button>
                             )}
-                            <Button onClick={() => setIsDialogOpen(true)} size="lg">
+                            <Button onClick={() => {
+                                events.buttonClick('Add Citation', 'bibliography_creator');
+                                setIsDialogOpen(true);
+                            }} size="lg">
                                 <Plus className="mr-2 h-5 w-5" />
                                 Add Citation
                             </Button>

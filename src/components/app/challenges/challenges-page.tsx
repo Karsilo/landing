@@ -1,11 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Calendar, Lock } from 'lucide-react';
 import Link from 'next/link';
+import { events } from '@/lib/analytics';
 
 const ChallengesPage = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
+
+    // Track page visit on mount
+    useEffect(() => {
+        events.pageVisit('challenges');
+    }, []);
 
     const getDaysInMonth = (date: Date) => {
         const year = date.getFullYear();

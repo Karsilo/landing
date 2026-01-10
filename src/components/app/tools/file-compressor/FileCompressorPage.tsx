@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Upload, Download, FileArchive, X, Loader2 } from "lucide-react";
 import { compressFile } from "@/utils/file-compressor";
+import { events } from "@/lib/analytics";
 
 interface CompressedFile {
     id: string;
@@ -74,6 +75,12 @@ export function FileCompressorPage() {
         if (newFiles.length < selectedFiles.length) {
             alert("Some files were skipped. Only PDFs, documents, and images are supported.");
         }
+
+        // Track file uploads
+        newFiles.forEach(file => {
+            const fileExtension = "." + file.originalFile.name.split(".").pop()?.toLowerCase();
+            events.fileUpload(fileExtension, 'file_compressor');
+        });
 
         setFiles(prev => [...prev, ...newFiles]);
 

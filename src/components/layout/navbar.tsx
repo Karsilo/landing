@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { events } from "@/lib/analytics";
 
 
 const courses = [
@@ -98,7 +99,7 @@ export function Navbar() {
                                                 className="w-full bg-white text-gray-900 hover:bg-gray-100"
                                                 asChild
                                             >
-                                                <a href="https://app.karsilo.com/sign-up">Get started</a>
+                                                <a href="https://app.karsilo.com/sign-up" onClick={() => events.signupClick('courses_menu')}>Get started</a>
                                             </Button>
                                         </div>
                                         {/* Right Section - Links */}
@@ -108,6 +109,7 @@ export function Navbar() {
                                                     <a
                                                         key={course.title}
                                                         href={course.href}
+                                                        onClick={() => events.courseClick(course.title)}
                                                         className="flex items-center justify-between p-3 rounded-md hover:bg-muted transition-colors group"
                                                     >
                                                         <span className="text-sm font-medium">{course.title}</span>
@@ -215,10 +217,10 @@ export function Navbar() {
                     <ThemeToggle />
                     <div className="h-6 w-px bg-border mx-2" />
                     <Button variant="ghost" asChild className="hidden md:inline-flex [background:hsl(var(--background)/0.6)!important] hover:[background:hsl(var(--accent)/0.6)!important]">
-                        <a href="https://app.karsilo.com/login">Login</a>
+                        <a href="https://app.karsilo.com/login" onClick={() => events.loginClick('navbar')}>Login</a>
                     </Button>
                     <Button asChild className="[background:hsl(var(--primary)/0.95)!important] hover:[background:hsl(var(--primary)/0.9)!important]">
-                        <a href="https://app.karsilo.com/sign-up">Get Started</a>
+                        <a href="https://app.karsilo.com/sign-up" onClick={() => events.signupClick('navbar')}>Get Started</a>
                     </Button>
 
 
@@ -244,7 +246,10 @@ export function Navbar() {
                                                     key={course.title}
                                                     href={course.href}
                                                     className="block py-2 text-base hover:text-primary transition-colors"
-                                                    onClick={() => setIsOpen(false)}
+                                                    onClick={() => {
+                                                        events.courseClick(course.title);
+                                                        setIsOpen(false);
+                                                    }}
                                                 >
                                                     {course.title}
                                                 </a>
@@ -304,10 +309,10 @@ export function Navbar() {
                             <div className="border-t px-6 py-4">
                                 <div className="flex gap-3">
                                     <Button variant="outline" className="flex-1" asChild>
-                                        <a href="https://app.karsilo.com/login">Login</a>
+                                        <a href="https://app.karsilo.com/login" onClick={() => events.loginClick('mobile_menu')}>Login</a>
                                     </Button>
                                     <Button className="flex-1" asChild>
-                                        <a href="https://app.karsilo.com/sign-up">Get Started</a>
+                                        <a href="https://app.karsilo.com/sign-up" onClick={() => events.signupClick('mobile_menu')}>Get Started</a>
                                     </Button>
                                 </div>
                             </div>
